@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Arty",
+    "version": "1.0",
+    "description": "Download YouTube video thumbnails",
+    "permissions": ["activeTab", "downloads", "<all_urls>"],
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
