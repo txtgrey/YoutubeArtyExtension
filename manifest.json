@@ -1,18 +1,19 @@
 {
-    "manifest_version": 2,
-    "name": "YouTube Arty",
-    "version": "1.0",
-    "description": "Download YouTube video thumbnails",
-    "permissions": ["activeTab", "downloads", "<all_urls>"],
-    "browser_action": {
-      "default_icon": "icon.png",
-      "default_popup": "popup.html"
-    },
-    "content_scripts": [
-      {
-        "matches": ["*://*.youtube.com/*"],
-        "js": ["content.js"]
-      }
-    ]
+  "manifest_version": 2,
+  "name": "VideoArty",
+  "version": "1.0",
+  "description": "Download YouTube video thumbnails",
+  "permissions": ["activeTab", "downloads", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "popup.html"
   }
-  
+}
+
